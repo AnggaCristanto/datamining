@@ -8,7 +8,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tugas Data Mining Import Data &#8212; My sample book</title>
+    <title>Tugas Data Mining NaiveBayes &#8212; Angga Cristanto</title>
   
   
   
@@ -18,12 +18,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -37,8 +37,8 @@
     <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d" />
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -63,8 +63,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'naivebayes';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="&lt;no title&gt;" href="markdown-notebooks.html" />
-    <link rel="prev" title="&lt;no title&gt;" href="notebooks2.html" />
+    <link rel="prev" title="Tugas Data Mining" href="notebooks.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -151,13 +150,14 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="intro.html">
-                    Selamat Datanggg
+                    Penambangan Data B
                 </a>
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="markdown.html">Tugas 1 Mengambil Data</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Tugas Data Mining Import Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks.html">Tugas Data Mining</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Tugas Data Mining NaiveBayes</a></li>
 </ul>
 
     </div>
@@ -204,6 +204,37 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/AnggaCristanto/datamining/blob/gh-pages/_sources/naivebayes.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
 <div class="dropdown dropdown-source-buttons">
   <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
     <i class="fab fa-github"></i>
@@ -212,7 +243,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+      <li><a href="https://github.com/AnggaCristanto/datamining" target="_blank"
    class="btn btn-sm btn-source-repository-button dropdown-item"
    title="Source repository"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -229,7 +260,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fnaivebayes.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/AnggaCristanto/datamining/issues/new?title=Issue%20on%20page%20%2Fnaivebayes.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -339,7 +370,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Tugas Data Mining Import Data</h1>
+    <h1>Tugas Data Mining NaiveBayes</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -353,8 +384,10 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="tex2jax_ignore mathjax_ignore section" id="tugas-data-mining-import-data">
-<h1>Tugas Data Mining Import Data<a class="headerlink" href="#tugas-data-mining-import-data" title="Permalink to this heading">#</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="tugas-data-mining-naivebayes">
+<h1>Tugas Data Mining NaiveBayes<a class="headerlink" href="#tugas-data-mining-naivebayes" title="Permalink to this heading">#</a></h1>
+<p><strong>Naive Bayes</strong> adalah salah satu algoritma klasifikasi probabilistik yang sangat populer dalam data mining dan machine learning. Algoritma ini didasarkan pada teorema Bayes yang menyatakan bahwa probabilitas suatu hipotesis dapat dihitung berdasarkan probabilitas data yang diamati dan probabilitas a priori yang diketahui.</p>
+<p>Naive Bayes disebut “naive” karena asumsi dasar yang digunakan oleh algoritma ini sangat sederhana dan tidak realistis, yaitu asumsi bahwa setiap atribut yang digunakan untuk mengklasifikasikan objek adalah independen satu sama lain. Meskipun asumsi ini seringkali tidak sepenuhnya benar dalam dunia nyata, algoritma Naive Bayes tetap memberikan hasil klasifikasi yang sangat baik dalam banyak kasus dan cukup efisien dalam komputasinya.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -384,7 +417,7 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-07531d4a-730b-423b-be6d-d8dda0a35824">
+  <div id="df-2a50888e-cc69-4a19-98e5-d7450c6e8036">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -455,7 +488,7 @@ document.write(`
   </tbody>
 </table>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-07531d4a-730b-423b-be6d-d8dda0a35824')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-2a50888e-cc69-4a19-98e5-d7450c6e8036')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
         
@@ -506,12 +539,12 @@ document.write(`
 
       <script>
         const buttonEl =
-          document.querySelector('#df-07531d4a-730b-423b-be6d-d8dda0a35824 button.colab-df-convert');
+          document.querySelector('#df-2a50888e-cc69-4a19-98e5-d7450c6e8036 button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-07531d4a-730b-423b-be6d-d8dda0a35824');
+          const element = document.querySelector('#df-2a50888e-cc69-4a19-98e5-d7450c6e8036');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
@@ -569,12 +602,13 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([&#39;virginica&#39;, &#39;versicolor&#39;, &#39;setosa&#39;, &#39;virginica&#39;, &#39;setosa&#39;,
-       &#39;virginica&#39;, &#39;virginica&#39;, &#39;versicolor&#39;, &#39;virginica&#39;, &#39;setosa&#39;,
-       &#39;versicolor&#39;, &#39;virginica&#39;, &#39;versicolor&#39;, &#39;virginica&#39;, &#39;versicolor&#39;,
-       &#39;virginica&#39;, &#39;versicolor&#39;, &#39;setosa&#39;, &#39;setosa&#39;, &#39;versicolor&#39;,
-       &#39;setosa&#39;, &#39;setosa&#39;, &#39;setosa&#39;, &#39;setosa&#39;, &#39;setosa&#39;, &#39;virginica&#39;,
-       &#39;versicolor&#39;, &#39;virginica&#39;, &#39;virginica&#39;, &#39;setosa&#39;], dtype=&#39;&lt;U10&#39;)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([&#39;setosa&#39;, &#39;virginica&#39;, &#39;virginica&#39;, &#39;setosa&#39;, &#39;setosa&#39;,
+       &#39;versicolor&#39;, &#39;virginica&#39;, &#39;setosa&#39;, &#39;virginica&#39;, &#39;virginica&#39;,
+       &#39;versicolor&#39;, &#39;virginica&#39;, &#39;setosa&#39;, &#39;setosa&#39;, &#39;versicolor&#39;,
+       &#39;setosa&#39;, &#39;versicolor&#39;, &#39;virginica&#39;, &#39;versicolor&#39;, &#39;virginica&#39;,
+       &#39;versicolor&#39;, &#39;virginica&#39;, &#39;virginica&#39;, &#39;versicolor&#39;, &#39;setosa&#39;,
+       &#39;virginica&#39;, &#39;versicolor&#39;, &#39;versicolor&#39;, &#39;setosa&#39;, &#39;setosa&#39;],
+      dtype=&#39;&lt;U10&#39;)
 </pre></div>
 </div>
 </div>
@@ -590,12 +624,12 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Accuracy :  1.0
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Accuracy :  0.9666666666666667
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[11,  0,  0],
-       [ 0,  8,  0],
-       [ 0,  0, 11]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[10,  0,  0],
+       [ 0,  9,  1],
+       [ 0,  0, 10]])
 </pre></div>
 </div>
 </div>
@@ -609,7 +643,7 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-c3e2f078-8bd5-45b4-afe1-c4c31b15998e">
+  <div id="df-1ea2041c-367f-4f60-87cd-e4de67f6e163">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -636,23 +670,23 @@ document.write(`
   <tbody>
     <tr>
       <th>0</th>
-      <td>virginica</td>
-      <td>virginica</td>
+      <td>setosa</td>
+      <td>setosa</td>
     </tr>
     <tr>
       <th>1</th>
       <td>versicolor</td>
-      <td>versicolor</td>
+      <td>virginica</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>setosa</td>
-      <td>setosa</td>
+      <td>virginica</td>
+      <td>virginica</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>virginica</td>
-      <td>virginica</td>
+      <td>setosa</td>
+      <td>setosa</td>
     </tr>
     <tr>
       <th>4</th>
@@ -661,8 +695,8 @@ document.write(`
     </tr>
     <tr>
       <th>5</th>
-      <td>virginica</td>
-      <td>virginica</td>
+      <td>versicolor</td>
+      <td>versicolor</td>
     </tr>
     <tr>
       <th>6</th>
@@ -671,8 +705,8 @@ document.write(`
     </tr>
     <tr>
       <th>7</th>
-      <td>versicolor</td>
-      <td>versicolor</td>
+      <td>setosa</td>
+      <td>setosa</td>
     </tr>
     <tr>
       <th>8</th>
@@ -681,8 +715,8 @@ document.write(`
     </tr>
     <tr>
       <th>9</th>
-      <td>setosa</td>
-      <td>setosa</td>
+      <td>virginica</td>
+      <td>virginica</td>
     </tr>
     <tr>
       <th>10</th>
@@ -696,13 +730,13 @@ document.write(`
     </tr>
     <tr>
       <th>12</th>
-      <td>versicolor</td>
-      <td>versicolor</td>
+      <td>setosa</td>
+      <td>setosa</td>
     </tr>
     <tr>
       <th>13</th>
-      <td>virginica</td>
-      <td>virginica</td>
+      <td>setosa</td>
+      <td>setosa</td>
     </tr>
     <tr>
       <th>14</th>
@@ -711,8 +745,8 @@ document.write(`
     </tr>
     <tr>
       <th>15</th>
-      <td>virginica</td>
-      <td>virginica</td>
+      <td>setosa</td>
+      <td>setosa</td>
     </tr>
     <tr>
       <th>16</th>
@@ -721,38 +755,38 @@ document.write(`
     </tr>
     <tr>
       <th>17</th>
-      <td>setosa</td>
-      <td>setosa</td>
+      <td>virginica</td>
+      <td>virginica</td>
     </tr>
     <tr>
       <th>18</th>
-      <td>setosa</td>
-      <td>setosa</td>
+      <td>versicolor</td>
+      <td>versicolor</td>
     </tr>
     <tr>
       <th>19</th>
-      <td>versicolor</td>
-      <td>versicolor</td>
+      <td>virginica</td>
+      <td>virginica</td>
     </tr>
     <tr>
       <th>20</th>
-      <td>setosa</td>
-      <td>setosa</td>
+      <td>versicolor</td>
+      <td>versicolor</td>
     </tr>
     <tr>
       <th>21</th>
-      <td>setosa</td>
-      <td>setosa</td>
+      <td>virginica</td>
+      <td>virginica</td>
     </tr>
     <tr>
       <th>22</th>
-      <td>setosa</td>
-      <td>setosa</td>
+      <td>virginica</td>
+      <td>virginica</td>
     </tr>
     <tr>
       <th>23</th>
-      <td>setosa</td>
-      <td>setosa</td>
+      <td>versicolor</td>
+      <td>versicolor</td>
     </tr>
     <tr>
       <th>24</th>
@@ -771,13 +805,13 @@ document.write(`
     </tr>
     <tr>
       <th>27</th>
-      <td>virginica</td>
-      <td>virginica</td>
+      <td>versicolor</td>
+      <td>versicolor</td>
     </tr>
     <tr>
       <th>28</th>
-      <td>virginica</td>
-      <td>virginica</td>
+      <td>setosa</td>
+      <td>setosa</td>
     </tr>
     <tr>
       <th>29</th>
@@ -787,7 +821,7 @@ document.write(`
   </tbody>
 </table>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-c3e2f078-8bd5-45b4-afe1-c4c31b15998e')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-1ea2041c-367f-4f60-87cd-e4de67f6e163')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
         
@@ -838,12 +872,12 @@ document.write(`
 
       <script>
         const buttonEl =
-          document.querySelector('#df-c3e2f078-8bd5-45b4-afe1-c4c31b15998e button.colab-df-convert');
+          document.querySelector('#df-1ea2041c-367f-4f60-87cd-e4de67f6e163 button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-c3e2f078-8bd5-45b4-afe1-c4c31b15998e');
+          const element = document.querySelector('#df-1ea2041c-367f-4f60-87cd-e4de67f6e163');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
@@ -892,27 +926,24 @@ document.write(`
               
               
                 <footer class="bd-footer-article">
-                  <!-- Previous / next buttons -->
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="notebooks2.html"
+       href="notebooks.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">&lt;no title&gt;</p>
+        <p class="prev-next-title">Tugas Data Mining</p>
       </div>
     </a>
-    <a class="right-next"
-       href="markdown-notebooks.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">&lt;no title&gt;</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
+</div></div>
+  
 </div>
+
                 </footer>
               
             </div>
@@ -922,13 +953,13 @@ document.write(`
             
           </div>
           <footer class="bd-footer-content">
-            <div class="bd-footer-content__inner">
+            
 <div class="bd-footer-content__inner container">
   
   <div class="footer-item">
     
 <p class="component-author">
-By The Jupyter Book Community
+By AnggaCristanto
 </p>
 
   </div>
@@ -952,7 +983,7 @@ By The Jupyter Book Community
     
   </div>
   
-</div></div>
+</div>
           </footer>
         
 
@@ -961,8 +992,8 @@ By The Jupyter Book Community
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d"></script>
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
 
   <footer class="bd-footer">
   </footer>
