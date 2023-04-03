@@ -8,7 +8,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>UTS &#8212; Angga Cristanto</title>
+    <title>UTS KNN &#8212; Angga Cristanto</title>
   
   
   
@@ -158,7 +158,7 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="markdown.html">Tugas 1 Mengambil Data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="notebooks3.html">Naive Bayes Classifier</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">UTS</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">UTS KNN</a></li>
 <li class="toctree-l1"><a class="reference internal" href="naivebayes.html">Tugas Data Mining NaiveBayes</a></li>
 </ul>
 
@@ -374,7 +374,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>UTS</h1>
+    <h1>UTS KNN</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -384,16 +384,13 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#knn">KNN</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#import-library">Import Library</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mengambil-dataset">Mengambil Dataset</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#melihat-ukuran-dataset">Melihat ukuran dataset</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#membagi-data-ke-x-dan-y">Membagi data ke X dan y</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#membagi-data-ke-data-test-dan-data-training">Membagi Data Ke data test dan data training</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#membangun-knn-classifier">Membangun knn Classifier</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hasil-akurasi">Hasil Akurasi</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-library">Import Library</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mengambil-dataset">Mengambil Dataset</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#melihat-ukuran-dataset">Melihat ukuran dataset</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#membagi-data-ke-x-dan-y">Membagi data ke X dan y</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#membagi-data-ke-data-test-dan-data-training">Membagi Data Ke data test dan data training</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#membangun-knn-classifier">Membangun knn Classifier</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hasil-akurasi">Hasil Akurasi</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#decision-tree">Decision Tree</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#import-modul">Import Modul</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mengambil-data">Mengambil Data</a></li>
@@ -414,12 +411,10 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="tex2jax_ignore mathjax_ignore section" id="uts">
-<h1>UTS<a class="headerlink" href="#uts" title="Permalink to this heading">#</a></h1>
-<div class="section" id="knn">
-<h2>KNN<a class="headerlink" href="#knn" title="Permalink to this heading">#</a></h2>
+  <div class="tex2jax_ignore mathjax_ignore section" id="uts-knn">
+<h1>UTS KNN<a class="headerlink" href="#uts-knn" title="Permalink to this heading">#</a></h1>
 <div class="section" id="import-library">
-<h3>Import Library<a class="headerlink" href="#import-library" title="Permalink to this heading">#</a></h3>
+<h2>Import Library<a class="headerlink" href="#import-library" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -431,7 +426,7 @@ document.write(`
 </div>
 </div>
 <div class="section" id="mengambil-dataset">
-<h3>Mengambil Dataset<a class="headerlink" href="#mengambil-dataset" title="Permalink to this heading">#</a></h3>
+<h2>Mengambil Dataset<a class="headerlink" href="#mengambil-dataset" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;https://raw.githubusercontent.com/datasets/breast-cancer/master/data/breast-cancer.csv&quot;</span><span class="p">)</span>
@@ -441,7 +436,7 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-c4889782-2cd8-46da-9309-77dc3152b01e">
+  <div id="df-fd844662-607b-4b12-9278-019f314f349d">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -542,7 +537,7 @@ document.write(`
   </tbody>
 </table>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-c4889782-2cd8-46da-9309-77dc3152b01e')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-fd844662-607b-4b12-9278-019f314f349d')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
         
@@ -593,12 +588,12 @@ document.write(`
 
       <script>
         const buttonEl =
-          document.querySelector('#df-c4889782-2cd8-46da-9309-77dc3152b01e button.colab-df-convert');
+          document.querySelector('#df-fd844662-607b-4b12-9278-019f314f349d button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-c4889782-2cd8-46da-9309-77dc3152b01e');
+          const element = document.querySelector('#df-fd844662-607b-4b12-9278-019f314f349d');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
@@ -621,7 +616,7 @@ document.write(`
 </div>
 </div>
 <div class="section" id="melihat-ukuran-dataset">
-<h3>Melihat ukuran dataset<a class="headerlink" href="#melihat-ukuran-dataset" title="Permalink to this heading">#</a></h3>
+<h2>Melihat ukuran dataset<a class="headerlink" href="#melihat-ukuran-dataset" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">shape</span>
@@ -636,7 +631,7 @@ document.write(`
 </div>
 </div>
 <div class="section" id="membagi-data-ke-x-dan-y">
-<h3>Membagi data ke X dan y<a class="headerlink" href="#membagi-data-ke-x-dan-y" title="Permalink to this heading">#</a></h3>
+<h2>Membagi data ke X dan y<a class="headerlink" href="#membagi-data-ke-x-dan-y" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># X tanpa label</span>
@@ -647,7 +642,7 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-c21ea923-2a56-4939-b6b0-dc6aac127afd">
+  <div id="df-e28f0d3a-b88e-4bb1-af74-0f140dc461e1">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -742,7 +737,7 @@ document.write(`
   </tbody>
 </table>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-c21ea923-2a56-4939-b6b0-dc6aac127afd')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-e28f0d3a-b88e-4bb1-af74-0f140dc461e1')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
         
@@ -793,12 +788,12 @@ document.write(`
 
       <script>
         const buttonEl =
-          document.querySelector('#df-c21ea923-2a56-4939-b6b0-dc6aac127afd button.colab-df-convert');
+          document.querySelector('#df-e28f0d3a-b88e-4bb1-af74-0f140dc461e1 button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-c21ea923-2a56-4939-b6b0-dc6aac127afd');
+          const element = document.querySelector('#df-e28f0d3a-b88e-4bb1-af74-0f140dc461e1');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
@@ -891,7 +886,7 @@ document.write(`
 </div>
 </div>
 <div class="section" id="membagi-data-ke-data-test-dan-data-training">
-<h3>Membagi Data Ke data test dan data training<a class="headerlink" href="#membagi-data-ke-data-test-dan-data-training" title="Permalink to this heading">#</a></h3>
+<h2>Membagi Data Ke data test dan data training<a class="headerlink" href="#membagi-data-ke-data-test-dan-data-training" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.20</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">stratify</span><span class="o">=</span><span class="n">y</span><span class="p">)</span>
@@ -1024,7 +1019,7 @@ document.write(`
 </div>
 </div>
 <div class="section" id="membangun-knn-classifier">
-<h3>Membangun knn Classifier<a class="headerlink" href="#membangun-knn-classifier" title="Permalink to this heading">#</a></h3>
+<h2>Membangun knn Classifier<a class="headerlink" href="#membangun-knn-classifier" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">knn</span> <span class="o">=</span> <span class="n">KNeighborsClassifier</span><span class="p">(</span><span class="n">n_neighbors</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span><span class="n">metric</span> <span class="o">=</span> <span class="s1">&#39;minkowski&#39;</span><span class="p">,</span> <span class="n">p</span> <span class="o">=</span> <span class="mi">2</span><span class="p">)</span>
@@ -1050,7 +1045,7 @@ document.write(`
 </div>
 </div>
 <div class="section" id="hasil-akurasi">
-<h3>Hasil Akurasi<a class="headerlink" href="#hasil-akurasi" title="Permalink to this heading">#</a></h3>
+<h2>Hasil Akurasi<a class="headerlink" href="#hasil-akurasi" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="o">*</span>
@@ -1071,7 +1066,6 @@ document.write(`
 <span class="nb">print</span><span class="p">(</span> <span class="sa">F</span><span class="s1">&#39;Confusion Matrix:&#39;</span><span class="p">,</span><span class="n">confusion_matrix</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">knn</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">))</span> <span class="p">)</span>
 <span class="nb">print</span><span class="p">()</span><span class="c1">#Print a new line</span>
 </pre></div>
-</div>
 </div>
 </div>
 </div>
@@ -1233,16 +1227,13 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#knn">KNN</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#import-library">Import Library</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mengambil-dataset">Mengambil Dataset</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#melihat-ukuran-dataset">Melihat ukuran dataset</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#membagi-data-ke-x-dan-y">Membagi data ke X dan y</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#membagi-data-ke-data-test-dan-data-training">Membagi Data Ke data test dan data training</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#membangun-knn-classifier">Membangun knn Classifier</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hasil-akurasi">Hasil Akurasi</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-library">Import Library</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mengambil-dataset">Mengambil Dataset</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#melihat-ukuran-dataset">Melihat ukuran dataset</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#membagi-data-ke-x-dan-y">Membagi data ke X dan y</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#membagi-data-ke-data-test-dan-data-training">Membagi Data Ke data test dan data training</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#membangun-knn-classifier">Membangun knn Classifier</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hasil-akurasi">Hasil Akurasi</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#decision-tree">Decision Tree</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#import-modul">Import Modul</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mengambil-data">Mengambil Data</a></li>
