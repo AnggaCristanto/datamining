@@ -64,7 +64,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Tugas Data Mining NaiveBayes" href="naivebayes.html" />
-    <link rel="prev" title="Naive Bayes Classifier" href="notebooks3.html" />
+    <link rel="prev" title="Implementasi K-NN(Tugas 3)" href="K-NN.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -157,7 +157,8 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="markdown.html">Tugas 1 Mengambil Data</a></li>
-<li class="toctree-l1"><a class="reference internal" href="notebooks3.html">Naive Bayes Classifier</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks.html">Decission Tree</a></li>
+<li class="toctree-l1"><a class="reference internal" href="K-NN.html">Implementasi K-NN(Tugas 3)</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">UTS KNN</a></li>
 <li class="toctree-l1"><a class="reference internal" href="naivebayes.html">Tugas Data Mining NaiveBayes</a></li>
 </ul>
@@ -436,7 +437,7 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-21a26d92-de61-44ba-9552-7da4738e94ab">
+  <div id="df-22ebcba5-e8f0-4c76-b8fa-ef4c0208c9fd">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -537,7 +538,7 @@ document.write(`
   </tbody>
 </table>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-21a26d92-de61-44ba-9552-7da4738e94ab')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-22ebcba5-e8f0-4c76-b8fa-ef4c0208c9fd')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
         
@@ -588,12 +589,12 @@ document.write(`
 
       <script>
         const buttonEl =
-          document.querySelector('#df-21a26d92-de61-44ba-9552-7da4738e94ab button.colab-df-convert');
+          document.querySelector('#df-22ebcba5-e8f0-4c76-b8fa-ef4c0208c9fd button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-21a26d92-de61-44ba-9552-7da4738e94ab');
+          const element = document.querySelector('#df-22ebcba5-e8f0-4c76-b8fa-ef4c0208c9fd');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
@@ -642,7 +643,7 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-8f79065d-66e6-467e-afd3-88e0ae87f2c7">
+  <div id="df-15cb5bdb-db96-4a33-a8b9-ee3a972de6e9">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -737,7 +738,7 @@ document.write(`
   </tbody>
 </table>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-8f79065d-66e6-467e-afd3-88e0ae87f2c7')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-15cb5bdb-db96-4a33-a8b9-ee3a972de6e9')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
         
@@ -788,12 +789,12 @@ document.write(`
 
       <script>
         const buttonEl =
-          document.querySelector('#df-8f79065d-66e6-467e-afd3-88e0ae87f2c7 button.colab-df-convert');
+          document.querySelector('#df-15cb5bdb-db96-4a33-a8b9-ee3a972de6e9 button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-8f79065d-66e6-467e-afd3-88e0ae87f2c7');
+          const element = document.querySelector('#df-15cb5bdb-db96-4a33-a8b9-ee3a972de6e9');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
@@ -914,103 +915,96 @@ document.write(`
 <span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">X_test</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
 <span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="n">X_train</span><span class="p">[:</span><span class="mi">5</span><span class="p">]</span>
 
-<span class="nn">/usr/local/lib/python3.9/dist-packages/sklearn/utils/_set_output.py</span> in <span class="ni">wrapped</span><span class="nt">(self, X, *args, **kwargs)</span>
+<span class="nn">/usr/local/lib/python3.10/dist-packages/sklearn/utils/_set_output.py</span> in <span class="ni">wrapped</span><span class="nt">(self, X, *args, **kwargs)</span>
 <span class="g g-Whitespace">    </span><span class="mi">138</span>     <span class="nd">@wraps</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
 <span class="g g-Whitespace">    </span><span class="mi">139</span>     <span class="k">def</span> <span class="nf">wrapped</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
 <span class="ne">--&gt; </span><span class="mi">140</span>         <span class="n">data_to_wrap</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 <span class="g g-Whitespace">    </span><span class="mi">141</span>         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">data_to_wrap</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">):</span>
 <span class="g g-Whitespace">    </span><span class="mi">142</span>             <span class="c1"># only wrap the first output for cross decomposition</span>
 
-<span class="nn">/usr/local/lib/python3.9/dist-packages/sklearn/base.py</span> in <span class="ni">fit_transform</span><span class="nt">(self, X, y, **fit_params)</span>
+<span class="nn">/usr/local/lib/python3.10/dist-packages/sklearn/base.py</span> in <span class="ni">fit_transform</span><span class="nt">(self, X, y, **fit_params)</span>
 <span class="g g-Whitespace">    </span><span class="mi">876</span>         <span class="k">if</span> <span class="n">y</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
 <span class="g g-Whitespace">    </span><span class="mi">877</span>             <span class="c1"># fit method of arity 1 (unsupervised transformation)</span>
 <span class="ne">--&gt; </span><span class="mi">878</span>             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="o">**</span><span class="n">fit_params</span><span class="p">)</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
 <span class="g g-Whitespace">    </span><span class="mi">879</span>         <span class="k">else</span><span class="p">:</span>
 <span class="g g-Whitespace">    </span><span class="mi">880</span>             <span class="c1"># fit method of arity 2 (supervised transformation)</span>
 
-<span class="nn">/usr/local/lib/python3.9/dist-packages/sklearn/preprocessing/_data.py</span> in <span class="ni">fit</span><span class="nt">(self, X, y, sample_weight)</span>
+<span class="nn">/usr/local/lib/python3.10/dist-packages/sklearn/preprocessing/_data.py</span> in <span class="ni">fit</span><span class="nt">(self, X, y, sample_weight)</span>
 <span class="g g-Whitespace">    </span><span class="mi">822</span>         <span class="c1"># Reset internal state before fitting</span>
 <span class="g g-Whitespace">    </span><span class="mi">823</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_reset</span><span class="p">()</span>
 <span class="ne">--&gt; </span><span class="mi">824</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">partial_fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">sample_weight</span><span class="p">)</span>
 <span class="g g-Whitespace">    </span><span class="mi">825</span> 
 <span class="g g-Whitespace">    </span><span class="mi">826</span>     <span class="k">def</span> <span class="nf">partial_fit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">sample_weight</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 
-<span class="nn">/usr/local/lib/python3.9/dist-packages/sklearn/preprocessing/_data.py</span> in <span class="ni">partial_fit</span><span class="nt">(self, X, y, sample_weight)</span>
+<span class="nn">/usr/local/lib/python3.10/dist-packages/sklearn/preprocessing/_data.py</span> in <span class="ni">partial_fit</span><span class="nt">(self, X, y, sample_weight)</span>
 <span class="g g-Whitespace">    </span><span class="mi">859</span> 
 <span class="g g-Whitespace">    </span><span class="mi">860</span>         <span class="n">first_call</span> <span class="o">=</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;n_samples_seen_&quot;</span><span class="p">)</span>
 <span class="ne">--&gt; </span><span class="mi">861</span>         <span class="n">X</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_validate_data</span><span class="p">(</span>
 <span class="g g-Whitespace">    </span><span class="mi">862</span>             <span class="n">X</span><span class="p">,</span>
 <span class="g g-Whitespace">    </span><span class="mi">863</span>             <span class="n">accept_sparse</span><span class="o">=</span><span class="p">(</span><span class="s2">&quot;csr&quot;</span><span class="p">,</span> <span class="s2">&quot;csc&quot;</span><span class="p">),</span>
 
-<span class="nn">/usr/local/lib/python3.9/dist-packages/sklearn/base.py</span> in <span class="ni">_validate_data</span><span class="nt">(self, X, y, reset, validate_separately, **check_params)</span>
+<span class="nn">/usr/local/lib/python3.10/dist-packages/sklearn/base.py</span> in <span class="ni">_validate_data</span><span class="nt">(self, X, y, reset, validate_separately, **check_params)</span>
 <span class="g g-Whitespace">    </span><span class="mi">563</span>             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Validation should be done on X, y or both.&quot;</span><span class="p">)</span>
 <span class="g g-Whitespace">    </span><span class="mi">564</span>         <span class="k">elif</span> <span class="ow">not</span> <span class="n">no_val_X</span> <span class="ow">and</span> <span class="n">no_val_y</span><span class="p">:</span>
 <span class="ne">--&gt; </span><span class="mi">565</span>             <span class="n">X</span> <span class="o">=</span> <span class="n">check_array</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">input_name</span><span class="o">=</span><span class="s2">&quot;X&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">check_params</span><span class="p">)</span>
 <span class="g g-Whitespace">    </span><span class="mi">566</span>             <span class="n">out</span> <span class="o">=</span> <span class="n">X</span>
 <span class="g g-Whitespace">    </span><span class="mi">567</span>         <span class="k">elif</span> <span class="n">no_val_X</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">no_val_y</span><span class="p">:</span>
 
-<span class="nn">/usr/local/lib/python3.9/dist-packages/sklearn/utils/validation.py</span> in <span class="ni">check_array</span><span class="nt">(array, accept_sparse, accept_large_sparse, dtype, order, copy, force_all_finite, ensure_2d, allow_nd, ensure_min_samples, ensure_min_features, estimator, input_name)</span>
+<span class="nn">/usr/local/lib/python3.10/dist-packages/sklearn/utils/validation.py</span> in <span class="ni">check_array</span><span class="nt">(array, accept_sparse, accept_large_sparse, dtype, order, copy, force_all_finite, ensure_2d, allow_nd, ensure_min_samples, ensure_min_features, estimator, input_name)</span>
 <span class="g g-Whitespace">    </span><span class="mi">808</span>         <span class="c1"># Use the original dtype for conversion if dtype is None</span>
 <span class="g g-Whitespace">    </span><span class="mi">809</span>         <span class="n">new_dtype</span> <span class="o">=</span> <span class="n">dtype_orig</span> <span class="k">if</span> <span class="n">dtype</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">dtype</span>
 <span class="ne">--&gt; </span><span class="mi">810</span>         <span class="n">array</span> <span class="o">=</span> <span class="n">array</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">new_dtype</span><span class="p">)</span>
 <span class="g g-Whitespace">    </span><span class="mi">811</span>         <span class="c1"># Since we converted here, we do not need to convert again later</span>
 <span class="g g-Whitespace">    </span><span class="mi">812</span>         <span class="n">dtype</span> <span class="o">=</span> <span class="kc">None</span>
 
-<span class="nn">/usr/local/lib/python3.9/dist-packages/pandas/core/generic.py</span> in <span class="ni">astype</span><span class="nt">(self, dtype, copy, errors)</span>
-<span class="g g-Whitespace">   </span><span class="mi">5910</span>         <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">5911</span>             <span class="c1"># else, only a single dtype is given</span>
-<span class="ne">-&gt; </span><span class="mi">5912</span>             <span class="n">new_data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_mgr</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">dtype</span><span class="o">=</span><span class="n">dtype</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="n">copy</span><span class="p">,</span> <span class="n">errors</span><span class="o">=</span><span class="n">errors</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">5913</span>             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_constructor</span><span class="p">(</span><span class="n">new_data</span><span class="p">)</span><span class="o">.</span><span class="n">__finalize__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s2">&quot;astype&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">5914</span> 
+<span class="nn">/usr/local/lib/python3.10/dist-packages/pandas/core/generic.py</span> in <span class="ni">astype</span><span class="nt">(self, dtype, copy, errors)</span>
+<span class="g g-Whitespace">   </span><span class="mi">6238</span>         <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">6239</span>             <span class="c1"># else, only a single dtype is given</span>
+<span class="ne">-&gt; </span><span class="mi">6240</span>             <span class="n">new_data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_mgr</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">dtype</span><span class="o">=</span><span class="n">dtype</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="n">copy</span><span class="p">,</span> <span class="n">errors</span><span class="o">=</span><span class="n">errors</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">6241</span>             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_constructor</span><span class="p">(</span><span class="n">new_data</span><span class="p">)</span><span class="o">.</span><span class="n">__finalize__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s2">&quot;astype&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">6242</span> 
 
-<span class="nn">/usr/local/lib/python3.9/dist-packages/pandas/core/internals/managers.py</span> in <span class="ni">astype</span><span class="nt">(self, dtype, copy, errors)</span>
-<span class="g g-Whitespace">    </span><span class="mi">417</span> 
-<span class="g g-Whitespace">    </span><span class="mi">418</span>     <span class="k">def</span> <span class="nf">astype</span><span class="p">(</span><span class="bp">self</span><span class="p">:</span> <span class="n">T</span><span class="p">,</span> <span class="n">dtype</span><span class="p">,</span> <span class="n">copy</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">errors</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;raise&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">T</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">419</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="s2">&quot;astype&quot;</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">dtype</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="n">copy</span><span class="p">,</span> <span class="n">errors</span><span class="o">=</span><span class="n">errors</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">420</span> 
-<span class="g g-Whitespace">    </span><span class="mi">421</span>     <span class="k">def</span> <span class="nf">convert</span><span class="p">(</span>
+<span class="nn">/usr/local/lib/python3.10/dist-packages/pandas/core/internals/managers.py</span> in <span class="ni">astype</span><span class="nt">(self, dtype, copy, errors)</span>
+<span class="g g-Whitespace">    </span><span class="mi">446</span> 
+<span class="g g-Whitespace">    </span><span class="mi">447</span>     <span class="k">def</span> <span class="nf">astype</span><span class="p">(</span><span class="bp">self</span><span class="p">:</span> <span class="n">T</span><span class="p">,</span> <span class="n">dtype</span><span class="p">,</span> <span class="n">copy</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">errors</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;raise&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">T</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">448</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="s2">&quot;astype&quot;</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">dtype</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="n">copy</span><span class="p">,</span> <span class="n">errors</span><span class="o">=</span><span class="n">errors</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">449</span> 
+<span class="g g-Whitespace">    </span><span class="mi">450</span>     <span class="k">def</span> <span class="nf">convert</span><span class="p">(</span>
 
-<span class="nn">/usr/local/lib/python3.9/dist-packages/pandas/core/internals/managers.py</span> in <span class="ni">apply</span><span class="nt">(self, f, align_keys, ignore_failures, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">302</span>                     <span class="n">applied</span> <span class="o">=</span> <span class="n">b</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">303</span>                 <span class="k">else</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">304</span>                     <span class="n">applied</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">f</span><span class="p">)(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">305</span>             <span class="k">except</span> <span class="p">(</span><span class="ne">TypeError</span><span class="p">,</span> <span class="ne">NotImplementedError</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">306</span>                 <span class="k">if</span> <span class="ow">not</span> <span class="n">ignore_failures</span><span class="p">:</span>
+<span class="nn">/usr/local/lib/python3.10/dist-packages/pandas/core/internals/managers.py</span> in <span class="ni">apply</span><span class="nt">(self, f, align_keys, ignore_failures, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">350</span>                     <span class="n">applied</span> <span class="o">=</span> <span class="n">b</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">351</span>                 <span class="k">else</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">352</span>                     <span class="n">applied</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">f</span><span class="p">)(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">353</span>             <span class="k">except</span> <span class="p">(</span><span class="ne">TypeError</span><span class="p">,</span> <span class="ne">NotImplementedError</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">354</span>                 <span class="k">if</span> <span class="ow">not</span> <span class="n">ignore_failures</span><span class="p">:</span>
 
-<span class="nn">/usr/local/lib/python3.9/dist-packages/pandas/core/internals/blocks.py</span> in <span class="ni">astype</span><span class="nt">(self, dtype, copy, errors)</span>
-<span class="g g-Whitespace">    </span><span class="mi">578</span>         <span class="n">values</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">values</span>
-<span class="g g-Whitespace">    </span><span class="mi">579</span> 
-<span class="ne">--&gt; </span><span class="mi">580</span>         <span class="n">new_values</span> <span class="o">=</span> <span class="n">astype_array_safe</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="n">dtype</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="n">copy</span><span class="p">,</span> <span class="n">errors</span><span class="o">=</span><span class="n">errors</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">581</span> 
-<span class="g g-Whitespace">    </span><span class="mi">582</span>         <span class="n">new_values</span> <span class="o">=</span> <span class="n">maybe_coerce_values</span><span class="p">(</span><span class="n">new_values</span><span class="p">)</span>
+<span class="nn">/usr/local/lib/python3.10/dist-packages/pandas/core/internals/blocks.py</span> in <span class="ni">astype</span><span class="nt">(self, dtype, copy, errors)</span>
+<span class="g g-Whitespace">    </span><span class="mi">524</span>         <span class="n">values</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">values</span>
+<span class="g g-Whitespace">    </span><span class="mi">525</span> 
+<span class="ne">--&gt; </span><span class="mi">526</span>         <span class="n">new_values</span> <span class="o">=</span> <span class="n">astype_array_safe</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="n">dtype</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="n">copy</span><span class="p">,</span> <span class="n">errors</span><span class="o">=</span><span class="n">errors</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">527</span> 
+<span class="g g-Whitespace">    </span><span class="mi">528</span>         <span class="n">new_values</span> <span class="o">=</span> <span class="n">maybe_coerce_values</span><span class="p">(</span><span class="n">new_values</span><span class="p">)</span>
 
-<span class="nn">/usr/local/lib/python3.9/dist-packages/pandas/core/dtypes/cast.py</span> in <span class="ni">astype_array_safe</span><span class="nt">(values, dtype, copy, errors)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1290</span> 
-<span class="g g-Whitespace">   </span><span class="mi">1291</span>     <span class="k">try</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">1292</span>         <span class="n">new_values</span> <span class="o">=</span> <span class="n">astype_array</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="n">dtype</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="n">copy</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1293</span>     <span class="k">except</span> <span class="p">(</span><span class="ne">ValueError</span><span class="p">,</span> <span class="ne">TypeError</span><span class="p">):</span>
-<span class="g g-Whitespace">   </span><span class="mi">1294</span>         <span class="c1"># e.g. astype_nansafe can fail on object-dtype of strings</span>
+<span class="nn">/usr/local/lib/python3.10/dist-packages/pandas/core/dtypes/astype.py</span> in <span class="ni">astype_array_safe</span><span class="nt">(values, dtype, copy, errors)</span>
+<span class="g g-Whitespace">    </span><span class="mi">297</span> 
+<span class="g g-Whitespace">    </span><span class="mi">298</span>     <span class="k">try</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">299</span>         <span class="n">new_values</span> <span class="o">=</span> <span class="n">astype_array</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="n">dtype</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="n">copy</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">300</span>     <span class="k">except</span> <span class="p">(</span><span class="ne">ValueError</span><span class="p">,</span> <span class="ne">TypeError</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">301</span>         <span class="c1"># e.g. astype_nansafe can fail on object-dtype of strings</span>
 
-<span class="nn">/usr/local/lib/python3.9/dist-packages/pandas/core/dtypes/cast.py</span> in <span class="ni">astype_array</span><span class="nt">(values, dtype, copy)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1235</span> 
-<span class="g g-Whitespace">   </span><span class="mi">1236</span>     <span class="k">else</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">1237</span>         <span class="n">values</span> <span class="o">=</span> <span class="n">astype_nansafe</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="n">dtype</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="n">copy</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1238</span> 
-<span class="g g-Whitespace">   </span><span class="mi">1239</span>     <span class="c1"># in pandas we don&#39;t store numpy str dtypes, so convert to object</span>
+<span class="nn">/usr/local/lib/python3.10/dist-packages/pandas/core/dtypes/astype.py</span> in <span class="ni">astype_array</span><span class="nt">(values, dtype, copy)</span>
+<span class="g g-Whitespace">    </span><span class="mi">228</span> 
+<span class="g g-Whitespace">    </span><span class="mi">229</span>     <span class="k">else</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">230</span>         <span class="n">values</span> <span class="o">=</span> <span class="n">astype_nansafe</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="n">dtype</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="n">copy</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">231</span> 
+<span class="g g-Whitespace">    </span><span class="mi">232</span>     <span class="c1"># in pandas we don&#39;t store numpy str dtypes, so convert to object</span>
 
-<span class="nn">/usr/local/lib/python3.9/dist-packages/pandas/core/dtypes/cast.py</span> in <span class="ni">astype_nansafe</span><span class="nt">(arr, dtype, copy, skipna)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1096</span>     <span class="k">if</span> <span class="n">arr</span><span class="o">.</span><span class="n">ndim</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1097</span>         <span class="n">flat</span> <span class="o">=</span> <span class="n">arr</span><span class="o">.</span><span class="n">ravel</span><span class="p">()</span>
-<span class="ne">-&gt; </span><span class="mi">1098</span>         <span class="n">result</span> <span class="o">=</span> <span class="n">astype_nansafe</span><span class="p">(</span><span class="n">flat</span><span class="p">,</span> <span class="n">dtype</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="n">copy</span><span class="p">,</span> <span class="n">skipna</span><span class="o">=</span><span class="n">skipna</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1099</span>         <span class="c1"># error: Item &quot;ExtensionArray&quot; of &quot;Union[ExtensionArray, ndarray]&quot; has no</span>
-<span class="g g-Whitespace">   </span><span class="mi">1100</span>         <span class="c1"># attribute &quot;reshape&quot;</span>
-
-<span class="nn">/usr/local/lib/python3.9/dist-packages/pandas/core/dtypes/cast.py</span> in <span class="ni">astype_nansafe</span><span class="nt">(arr, dtype, copy, skipna)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1179</span>     <span class="k">if</span> <span class="n">copy</span> <span class="ow">or</span> <span class="n">is_object_dtype</span><span class="p">(</span><span class="n">arr</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span> <span class="ow">or</span> <span class="n">is_object_dtype</span><span class="p">(</span><span class="n">dtype</span><span class="p">):</span>
-<span class="g g-Whitespace">   </span><span class="mi">1180</span>         <span class="c1"># Explicit copy, or required since NumPy can&#39;t view from / to object.</span>
-<span class="ne">-&gt; </span><span class="mi">1181</span>         <span class="k">return</span> <span class="n">arr</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">dtype</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1182</span> 
-<span class="g g-Whitespace">   </span><span class="mi">1183</span>     <span class="k">return</span> <span class="n">arr</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">dtype</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="n">copy</span><span class="p">)</span>
+<span class="nn">/usr/local/lib/python3.10/dist-packages/pandas/core/dtypes/astype.py</span> in <span class="ni">astype_nansafe</span><span class="nt">(arr, dtype, copy, skipna)</span>
+<span class="g g-Whitespace">    </span><span class="mi">168</span>     <span class="k">if</span> <span class="n">copy</span> <span class="ow">or</span> <span class="n">is_object_dtype</span><span class="p">(</span><span class="n">arr</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span> <span class="ow">or</span> <span class="n">is_object_dtype</span><span class="p">(</span><span class="n">dtype</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">169</span>         <span class="c1"># Explicit copy, or required since NumPy can&#39;t view from / to object.</span>
+<span class="ne">--&gt; </span><span class="mi">170</span>         <span class="k">return</span> <span class="n">arr</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">dtype</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">171</span> 
+<span class="g g-Whitespace">    </span><span class="mi">172</span>     <span class="k">return</span> <span class="n">arr</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">dtype</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="n">copy</span><span class="p">)</span>
 
 <span class="ne">ValueError</span>: could not convert string to float: &#39;30-39&#39;
 </pre></div>
@@ -1558,12 +1552,12 @@ document.write(`
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="notebooks3.html"
+       href="K-NN.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Naive Bayes Classifier</p>
+        <p class="prev-next-title">Implementasi K-NN(Tugas 3)</p>
       </div>
     </a>
     <a class="right-next"

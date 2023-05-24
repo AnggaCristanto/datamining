@@ -1,19 +1,17 @@
 Traceback (most recent call last):
-  File "/usr/local/lib/python3.9/dist-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
+  File "/usr/local/lib/python3.10/dist-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
     executenb(
-  File "/usr/local/lib/python3.9/dist-packages/nbclient/client.py", line 1204, in execute
+  File "/usr/local/lib/python3.10/dist-packages/nbclient/client.py", line 1305, in execute
     return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
-  File "/usr/local/lib/python3.9/dist-packages/nbclient/util.py", line 84, in wrapped
-    return just_run(coro(*args, **kwargs))
-  File "/usr/local/lib/python3.9/dist-packages/nbclient/util.py", line 62, in just_run
-    return loop.run_until_complete(coro)
-  File "/usr/lib/python3.9/asyncio/base_events.py", line 647, in run_until_complete
+  File "/usr/local/lib/python3.10/dist-packages/jupyter_core/utils/__init__.py", line 166, in wrapped
+    return loop.run_until_complete(inner)
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 649, in run_until_complete
     return future.result()
-  File "/usr/local/lib/python3.9/dist-packages/nbclient/client.py", line 663, in async_execute
+  File "/usr/local/lib/python3.10/dist-packages/nbclient/client.py", line 705, in async_execute
     await self.async_execute_cell(
-  File "/usr/local/lib/python3.9/dist-packages/nbclient/client.py", line 965, in async_execute_cell
+  File "/usr/local/lib/python3.10/dist-packages/nbclient/client.py", line 1058, in async_execute_cell
     await self._check_raise_for_error(cell, cell_index, exec_reply)
-  File "/usr/local/lib/python3.9/dist-packages/nbclient/client.py", line 862, in _check_raise_for_error
+  File "/usr/local/lib/python3.10/dist-packages/nbclient/client.py", line 914, in _check_raise_for_error
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
@@ -25,6 +23,7 @@ X_test = sc.transform(X_test)
 X_train[:5]
 ------------------
 
+
 [0;31m[0m
 [0;31mValueError[0mTraceback (most recent call last)
 [0;32m<ipython-input-7-4cc3e25bc983>[0m in [0;36m<cell line: 4>[0;34m()[0m
@@ -34,104 +33,96 @@ X_train[:5]
 [0m[1;32m      5[0m [0mX_test[0m [0;34m=[0m [0msc[0m[0;34m.[0m[0mtransform[0m[0;34m([0m[0mX_test[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
 [1;32m      6[0m [0mX_train[0m[0;34m[[0m[0;34m:[0m[0;36m5[0m[0;34m][0m[0;34m[0m[0;34m[0m[0m
 
-[0;32m/usr/local/lib/python3.9/dist-packages/sklearn/utils/_set_output.py[0m in [0;36mwrapped[0;34m(self, X, *args, **kwargs)[0m
+[0;32m/usr/local/lib/python3.10/dist-packages/sklearn/utils/_set_output.py[0m in [0;36mwrapped[0;34m(self, X, *args, **kwargs)[0m
 [1;32m    138[0m     [0;34m@[0m[0mwraps[0m[0;34m([0m[0mf[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
 [1;32m    139[0m     [0;32mdef[0m [0mwrapped[0m[0;34m([0m[0mself[0m[0;34m,[0m [0mX[0m[0;34m,[0m [0;34m*[0m[0margs[0m[0;34m,[0m [0;34m**[0m[0mkwargs[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
 [0;32m--> 140[0;31m         [0mdata_to_wrap[0m [0;34m=[0m [0mf[0m[0;34m([0m[0mself[0m[0;34m,[0m [0mX[0m[0;34m,[0m [0;34m*[0m[0margs[0m[0;34m,[0m [0;34m**[0m[0mkwargs[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
 [0m[1;32m    141[0m         [0;32mif[0m [0misinstance[0m[0;34m([0m[0mdata_to_wrap[0m[0;34m,[0m [0mtuple[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
 [1;32m    142[0m             [0;31m# only wrap the first output for cross decomposition[0m[0;34m[0m[0;34m[0m[0m
 
-[0;32m/usr/local/lib/python3.9/dist-packages/sklearn/base.py[0m in [0;36mfit_transform[0;34m(self, X, y, **fit_params)[0m
+[0;32m/usr/local/lib/python3.10/dist-packages/sklearn/base.py[0m in [0;36mfit_transform[0;34m(self, X, y, **fit_params)[0m
 [1;32m    876[0m         [0;32mif[0m [0my[0m [0;32mis[0m [0;32mNone[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
 [1;32m    877[0m             [0;31m# fit method of arity 1 (unsupervised transformation)[0m[0;34m[0m[0;34m[0m[0m
 [0;32m--> 878[0;31m             [0;32mreturn[0m [0mself[0m[0;34m.[0m[0mfit[0m[0;34m([0m[0mX[0m[0;34m,[0m [0;34m**[0m[0mfit_params[0m[0;34m)[0m[0;34m.[0m[0mtransform[0m[0;34m([0m[0mX[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
 [0m[1;32m    879[0m         [0;32melse[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
 [1;32m    880[0m             [0;31m# fit method of arity 2 (supervised transformation)[0m[0;34m[0m[0;34m[0m[0m
 
-[0;32m/usr/local/lib/python3.9/dist-packages/sklearn/preprocessing/_data.py[0m in [0;36mfit[0;34m(self, X, y, sample_weight)[0m
+[0;32m/usr/local/lib/python3.10/dist-packages/sklearn/preprocessing/_data.py[0m in [0;36mfit[0;34m(self, X, y, sample_weight)[0m
 [1;32m    822[0m         [0;31m# Reset internal state before fitting[0m[0;34m[0m[0;34m[0m[0m
 [1;32m    823[0m         [0mself[0m[0;34m.[0m[0m_reset[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
 [0;32m--> 824[0;31m         [0;32mreturn[0m [0mself[0m[0;34m.[0m[0mpartial_fit[0m[0;34m([0m[0mX[0m[0;34m,[0m [0my[0m[0;34m,[0m [0msample_weight[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
 [0m[1;32m    825[0m [0;34m[0m[0m
 [1;32m    826[0m     [0;32mdef[0m [0mpartial_fit[0m[0;34m([0m[0mself[0m[0;34m,[0m [0mX[0m[0;34m,[0m [0my[0m[0;34m=[0m[0;32mNone[0m[0;34m,[0m [0msample_weight[0m[0;34m=[0m[0;32mNone[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
 
-[0;32m/usr/local/lib/python3.9/dist-packages/sklearn/preprocessing/_data.py[0m in [0;36mpartial_fit[0;34m(self, X, y, sample_weight)[0m
+[0;32m/usr/local/lib/python3.10/dist-packages/sklearn/preprocessing/_data.py[0m in [0;36mpartial_fit[0;34m(self, X, y, sample_weight)[0m
 [1;32m    859[0m [0;34m[0m[0m
 [1;32m    860[0m         [0mfirst_call[0m [0;34m=[0m [0;32mnot[0m [0mhasattr[0m[0;34m([0m[0mself[0m[0;34m,[0m [0;34m"n_samples_seen_"[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
 [0;32m--> 861[0;31m         X = self._validate_data(
 [0m[1;32m    862[0m             [0mX[0m[0;34m,[0m[0;34m[0m[0;34m[0m[0m
 [1;32m    863[0m             [0maccept_sparse[0m[0;34m=[0m[0;34m([0m[0;34m"csr"[0m[0;34m,[0m [0;34m"csc"[0m[0;34m)[0m[0;34m,[0m[0;34m[0m[0;34m[0m[0m
 
-[0;32m/usr/local/lib/python3.9/dist-packages/sklearn/base.py[0m in [0;36m_validate_data[0;34m(self, X, y, reset, validate_separately, **check_params)[0m
+[0;32m/usr/local/lib/python3.10/dist-packages/sklearn/base.py[0m in [0;36m_validate_data[0;34m(self, X, y, reset, validate_separately, **check_params)[0m
 [1;32m    563[0m             [0;32mraise[0m [0mValueError[0m[0;34m([0m[0;34m"Validation should be done on X, y or both."[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
 [1;32m    564[0m         [0;32melif[0m [0;32mnot[0m [0mno_val_X[0m [0;32mand[0m [0mno_val_y[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
 [0;32m--> 565[0;31m             [0mX[0m [0;34m=[0m [0mcheck_array[0m[0;34m([0m[0mX[0m[0;34m,[0m [0minput_name[0m[0;34m=[0m[0;34m"X"[0m[0;34m,[0m [0;34m**[0m[0mcheck_params[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
 [0m[1;32m    566[0m             [0mout[0m [0;34m=[0m [0mX[0m[0;34m[0m[0;34m[0m[0m
 [1;32m    567[0m         [0;32melif[0m [0mno_val_X[0m [0;32mand[0m [0;32mnot[0m [0mno_val_y[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
 
-[0;32m/usr/local/lib/python3.9/dist-packages/sklearn/utils/validation.py[0m in [0;36mcheck_array[0;34m(array, accept_sparse, accept_large_sparse, dtype, order, copy, force_all_finite, ensure_2d, allow_nd, ensure_min_samples, ensure_min_features, estimator, input_name)[0m
+[0;32m/usr/local/lib/python3.10/dist-packages/sklearn/utils/validation.py[0m in [0;36mcheck_array[0;34m(array, accept_sparse, accept_large_sparse, dtype, order, copy, force_all_finite, ensure_2d, allow_nd, ensure_min_samples, ensure_min_features, estimator, input_name)[0m
 [1;32m    808[0m         [0;31m# Use the original dtype for conversion if dtype is None[0m[0;34m[0m[0;34m[0m[0m
 [1;32m    809[0m         [0mnew_dtype[0m [0;34m=[0m [0mdtype_orig[0m [0;32mif[0m [0mdtype[0m [0;32mis[0m [0;32mNone[0m [0;32melse[0m [0mdtype[0m[0;34m[0m[0;34m[0m[0m
 [0;32m--> 810[0;31m         [0marray[0m [0;34m=[0m [0marray[0m[0;34m.[0m[0mastype[0m[0;34m([0m[0mnew_dtype[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
 [0m[1;32m    811[0m         [0;31m# Since we converted here, we do not need to convert again later[0m[0;34m[0m[0;34m[0m[0m
 [1;32m    812[0m         [0mdtype[0m [0;34m=[0m [0;32mNone[0m[0;34m[0m[0;34m[0m[0m
 
-[0;32m/usr/local/lib/python3.9/dist-packages/pandas/core/generic.py[0m in [0;36mastype[0;34m(self, dtype, copy, errors)[0m
-[1;32m   5910[0m         [0;32melse[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
-[1;32m   5911[0m             [0;31m# else, only a single dtype is given[0m[0;34m[0m[0;34m[0m[0m
-[0;32m-> 5912[0;31m             [0mnew_data[0m [0;34m=[0m [0mself[0m[0;34m.[0m[0m_mgr[0m[0;34m.[0m[0mastype[0m[0;34m([0m[0mdtype[0m[0;34m=[0m[0mdtype[0m[0;34m,[0m [0mcopy[0m[0;34m=[0m[0mcopy[0m[0;34m,[0m [0merrors[0m[0;34m=[0m[0merrors[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[0m[1;32m   5913[0m             [0;32mreturn[0m [0mself[0m[0;34m.[0m[0m_constructor[0m[0;34m([0m[0mnew_data[0m[0;34m)[0m[0;34m.[0m[0m__finalize__[0m[0;34m([0m[0mself[0m[0;34m,[0m [0mmethod[0m[0;34m=[0m[0;34m"astype"[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[1;32m   5914[0m [0;34m[0m[0m
+[0;32m/usr/local/lib/python3.10/dist-packages/pandas/core/generic.py[0m in [0;36mastype[0;34m(self, dtype, copy, errors)[0m
+[1;32m   6238[0m         [0;32melse[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[1;32m   6239[0m             [0;31m# else, only a single dtype is given[0m[0;34m[0m[0;34m[0m[0m
+[0;32m-> 6240[0;31m             [0mnew_data[0m [0;34m=[0m [0mself[0m[0;34m.[0m[0m_mgr[0m[0;34m.[0m[0mastype[0m[0;34m([0m[0mdtype[0m[0;34m=[0m[0mdtype[0m[0;34m,[0m [0mcopy[0m[0;34m=[0m[0mcopy[0m[0;34m,[0m [0merrors[0m[0;34m=[0m[0merrors[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m   6241[0m             [0;32mreturn[0m [0mself[0m[0;34m.[0m[0m_constructor[0m[0;34m([0m[0mnew_data[0m[0;34m)[0m[0;34m.[0m[0m__finalize__[0m[0;34m([0m[0mself[0m[0;34m,[0m [0mmethod[0m[0;34m=[0m[0;34m"astype"[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[1;32m   6242[0m [0;34m[0m[0m
 
-[0;32m/usr/local/lib/python3.9/dist-packages/pandas/core/internals/managers.py[0m in [0;36mastype[0;34m(self, dtype, copy, errors)[0m
-[1;32m    417[0m [0;34m[0m[0m
-[1;32m    418[0m     [0;32mdef[0m [0mastype[0m[0;34m([0m[0mself[0m[0;34m:[0m [0mT[0m[0;34m,[0m [0mdtype[0m[0;34m,[0m [0mcopy[0m[0;34m:[0m [0mbool[0m [0;34m=[0m [0;32mFalse[0m[0;34m,[0m [0merrors[0m[0;34m:[0m [0mstr[0m [0;34m=[0m [0;34m"raise"[0m[0;34m)[0m [0;34m->[0m [0mT[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
-[0;32m--> 419[0;31m         [0;32mreturn[0m [0mself[0m[0;34m.[0m[0mapply[0m[0;34m([0m[0;34m"astype"[0m[0;34m,[0m [0mdtype[0m[0;34m=[0m[0mdtype[0m[0;34m,[0m [0mcopy[0m[0;34m=[0m[0mcopy[0m[0;34m,[0m [0merrors[0m[0;34m=[0m[0merrors[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[0m[1;32m    420[0m [0;34m[0m[0m
-[1;32m    421[0m     def convert(
+[0;32m/usr/local/lib/python3.10/dist-packages/pandas/core/internals/managers.py[0m in [0;36mastype[0;34m(self, dtype, copy, errors)[0m
+[1;32m    446[0m [0;34m[0m[0m
+[1;32m    447[0m     [0;32mdef[0m [0mastype[0m[0;34m([0m[0mself[0m[0;34m:[0m [0mT[0m[0;34m,[0m [0mdtype[0m[0;34m,[0m [0mcopy[0m[0;34m:[0m [0mbool[0m [0;34m=[0m [0;32mFalse[0m[0;34m,[0m [0merrors[0m[0;34m:[0m [0mstr[0m [0;34m=[0m [0;34m"raise"[0m[0;34m)[0m [0;34m->[0m [0mT[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 448[0;31m         [0;32mreturn[0m [0mself[0m[0;34m.[0m[0mapply[0m[0;34m([0m[0;34m"astype"[0m[0;34m,[0m [0mdtype[0m[0;34m=[0m[0mdtype[0m[0;34m,[0m [0mcopy[0m[0;34m=[0m[0mcopy[0m[0;34m,[0m [0merrors[0m[0;34m=[0m[0merrors[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    449[0m [0;34m[0m[0m
+[1;32m    450[0m     def convert(
 
-[0;32m/usr/local/lib/python3.9/dist-packages/pandas/core/internals/managers.py[0m in [0;36mapply[0;34m(self, f, align_keys, ignore_failures, **kwargs)[0m
-[1;32m    302[0m                     [0mapplied[0m [0;34m=[0m [0mb[0m[0;34m.[0m[0mapply[0m[0;34m([0m[0mf[0m[0;34m,[0m [0;34m**[0m[0mkwargs[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[1;32m    303[0m                 [0;32melse[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
-[0;32m--> 304[0;31m                     [0mapplied[0m [0;34m=[0m [0mgetattr[0m[0;34m([0m[0mb[0m[0;34m,[0m [0mf[0m[0;34m)[0m[0;34m([0m[0;34m**[0m[0mkwargs[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[0m[1;32m    305[0m             [0;32mexcept[0m [0;34m([0m[0mTypeError[0m[0;34m,[0m [0mNotImplementedError[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
-[1;32m    306[0m                 [0;32mif[0m [0;32mnot[0m [0mignore_failures[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m/usr/local/lib/python3.10/dist-packages/pandas/core/internals/managers.py[0m in [0;36mapply[0;34m(self, f, align_keys, ignore_failures, **kwargs)[0m
+[1;32m    350[0m                     [0mapplied[0m [0;34m=[0m [0mb[0m[0;34m.[0m[0mapply[0m[0;34m([0m[0mf[0m[0;34m,[0m [0;34m**[0m[0mkwargs[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    351[0m                 [0;32melse[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 352[0;31m                     [0mapplied[0m [0;34m=[0m [0mgetattr[0m[0;34m([0m[0mb[0m[0;34m,[0m [0mf[0m[0;34m)[0m[0;34m([0m[0;34m**[0m[0mkwargs[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    353[0m             [0;32mexcept[0m [0;34m([0m[0mTypeError[0m[0;34m,[0m [0mNotImplementedError[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    354[0m                 [0;32mif[0m [0;32mnot[0m [0mignore_failures[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
 
-[0;32m/usr/local/lib/python3.9/dist-packages/pandas/core/internals/blocks.py[0m in [0;36mastype[0;34m(self, dtype, copy, errors)[0m
-[1;32m    578[0m         [0mvalues[0m [0;34m=[0m [0mself[0m[0;34m.[0m[0mvalues[0m[0;34m[0m[0;34m[0m[0m
-[1;32m    579[0m [0;34m[0m[0m
-[0;32m--> 580[0;31m         [0mnew_values[0m [0;34m=[0m [0mastype_array_safe[0m[0;34m([0m[0mvalues[0m[0;34m,[0m [0mdtype[0m[0;34m,[0m [0mcopy[0m[0;34m=[0m[0mcopy[0m[0;34m,[0m [0merrors[0m[0;34m=[0m[0merrors[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[0m[1;32m    581[0m [0;34m[0m[0m
-[1;32m    582[0m         [0mnew_values[0m [0;34m=[0m [0mmaybe_coerce_values[0m[0;34m([0m[0mnew_values[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0;32m/usr/local/lib/python3.10/dist-packages/pandas/core/internals/blocks.py[0m in [0;36mastype[0;34m(self, dtype, copy, errors)[0m
+[1;32m    524[0m         [0mvalues[0m [0;34m=[0m [0mself[0m[0;34m.[0m[0mvalues[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    525[0m [0;34m[0m[0m
+[0;32m--> 526[0;31m         [0mnew_values[0m [0;34m=[0m [0mastype_array_safe[0m[0;34m([0m[0mvalues[0m[0;34m,[0m [0mdtype[0m[0;34m,[0m [0mcopy[0m[0;34m=[0m[0mcopy[0m[0;34m,[0m [0merrors[0m[0;34m=[0m[0merrors[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    527[0m [0;34m[0m[0m
+[1;32m    528[0m         [0mnew_values[0m [0;34m=[0m [0mmaybe_coerce_values[0m[0;34m([0m[0mnew_values[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
 
-[0;32m/usr/local/lib/python3.9/dist-packages/pandas/core/dtypes/cast.py[0m in [0;36mastype_array_safe[0;34m(values, dtype, copy, errors)[0m
-[1;32m   1290[0m [0;34m[0m[0m
-[1;32m   1291[0m     [0;32mtry[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
-[0;32m-> 1292[0;31m         [0mnew_values[0m [0;34m=[0m [0mastype_array[0m[0;34m([0m[0mvalues[0m[0;34m,[0m [0mdtype[0m[0;34m,[0m [0mcopy[0m[0;34m=[0m[0mcopy[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[0m[1;32m   1293[0m     [0;32mexcept[0m [0;34m([0m[0mValueError[0m[0;34m,[0m [0mTypeError[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
-[1;32m   1294[0m         [0;31m# e.g. astype_nansafe can fail on object-dtype of strings[0m[0;34m[0m[0;34m[0m[0m
+[0;32m/usr/local/lib/python3.10/dist-packages/pandas/core/dtypes/astype.py[0m in [0;36mastype_array_safe[0;34m(values, dtype, copy, errors)[0m
+[1;32m    297[0m [0;34m[0m[0m
+[1;32m    298[0m     [0;32mtry[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 299[0;31m         [0mnew_values[0m [0;34m=[0m [0mastype_array[0m[0;34m([0m[0mvalues[0m[0;34m,[0m [0mdtype[0m[0;34m,[0m [0mcopy[0m[0;34m=[0m[0mcopy[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    300[0m     [0;32mexcept[0m [0;34m([0m[0mValueError[0m[0;34m,[0m [0mTypeError[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    301[0m         [0;31m# e.g. astype_nansafe can fail on object-dtype of strings[0m[0;34m[0m[0;34m[0m[0m
 
-[0;32m/usr/local/lib/python3.9/dist-packages/pandas/core/dtypes/cast.py[0m in [0;36mastype_array[0;34m(values, dtype, copy)[0m
-[1;32m   1235[0m [0;34m[0m[0m
-[1;32m   1236[0m     [0;32melse[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
-[0;32m-> 1237[0;31m         [0mvalues[0m [0;34m=[0m [0mastype_nansafe[0m[0;34m([0m[0mvalues[0m[0;34m,[0m [0mdtype[0m[0;34m,[0m [0mcopy[0m[0;34m=[0m[0mcopy[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[0m[1;32m   1238[0m [0;34m[0m[0m
-[1;32m   1239[0m     [0;31m# in pandas we don't store numpy str dtypes, so convert to object[0m[0;34m[0m[0;34m[0m[0m
+[0;32m/usr/local/lib/python3.10/dist-packages/pandas/core/dtypes/astype.py[0m in [0;36mastype_array[0;34m(values, dtype, copy)[0m
+[1;32m    228[0m [0;34m[0m[0m
+[1;32m    229[0m     [0;32melse[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 230[0;31m         [0mvalues[0m [0;34m=[0m [0mastype_nansafe[0m[0;34m([0m[0mvalues[0m[0;34m,[0m [0mdtype[0m[0;34m,[0m [0mcopy[0m[0;34m=[0m[0mcopy[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    231[0m [0;34m[0m[0m
+[1;32m    232[0m     [0;31m# in pandas we don't store numpy str dtypes, so convert to object[0m[0;34m[0m[0;34m[0m[0m
 
-[0;32m/usr/local/lib/python3.9/dist-packages/pandas/core/dtypes/cast.py[0m in [0;36mastype_nansafe[0;34m(arr, dtype, copy, skipna)[0m
-[1;32m   1096[0m     [0;32mif[0m [0marr[0m[0;34m.[0m[0mndim[0m [0;34m>[0m [0;36m1[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
-[1;32m   1097[0m         [0mflat[0m [0;34m=[0m [0marr[0m[0;34m.[0m[0mravel[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[0;32m-> 1098[0;31m         [0mresult[0m [0;34m=[0m [0mastype_nansafe[0m[0;34m([0m[0mflat[0m[0;34m,[0m [0mdtype[0m[0;34m,[0m [0mcopy[0m[0;34m=[0m[0mcopy[0m[0;34m,[0m [0mskipna[0m[0;34m=[0m[0mskipna[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[0m[1;32m   1099[0m         [0;31m# error: Item "ExtensionArray" of "Union[ExtensionArray, ndarray]" has no[0m[0;34m[0m[0;34m[0m[0m
-[1;32m   1100[0m         [0;31m# attribute "reshape"[0m[0;34m[0m[0;34m[0m[0m
-
-[0;32m/usr/local/lib/python3.9/dist-packages/pandas/core/dtypes/cast.py[0m in [0;36mastype_nansafe[0;34m(arr, dtype, copy, skipna)[0m
-[1;32m   1179[0m     [0;32mif[0m [0mcopy[0m [0;32mor[0m [0mis_object_dtype[0m[0;34m([0m[0marr[0m[0;34m.[0m[0mdtype[0m[0;34m)[0m [0;32mor[0m [0mis_object_dtype[0m[0;34m([0m[0mdtype[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
-[1;32m   1180[0m         [0;31m# Explicit copy, or required since NumPy can't view from / to object.[0m[0;34m[0m[0;34m[0m[0m
-[0;32m-> 1181[0;31m         [0;32mreturn[0m [0marr[0m[0;34m.[0m[0mastype[0m[0;34m([0m[0mdtype[0m[0;34m,[0m [0mcopy[0m[0;34m=[0m[0;32mTrue[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[0m[1;32m   1182[0m [0;34m[0m[0m
-[1;32m   1183[0m     [0;32mreturn[0m [0marr[0m[0;34m.[0m[0mastype[0m[0;34m([0m[0mdtype[0m[0;34m,[0m [0mcopy[0m[0;34m=[0m[0mcopy[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0;32m/usr/local/lib/python3.10/dist-packages/pandas/core/dtypes/astype.py[0m in [0;36mastype_nansafe[0;34m(arr, dtype, copy, skipna)[0m
+[1;32m    168[0m     [0;32mif[0m [0mcopy[0m [0;32mor[0m [0mis_object_dtype[0m[0;34m([0m[0marr[0m[0;34m.[0m[0mdtype[0m[0;34m)[0m [0;32mor[0m [0mis_object_dtype[0m[0;34m([0m[0mdtype[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    169[0m         [0;31m# Explicit copy, or required since NumPy can't view from / to object.[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 170[0;31m         [0;32mreturn[0m [0marr[0m[0;34m.[0m[0mastype[0m[0;34m([0m[0mdtype[0m[0;34m,[0m [0mcopy[0m[0;34m=[0m[0;32mTrue[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    171[0m [0;34m[0m[0m
+[1;32m    172[0m     [0;32mreturn[0m [0marr[0m[0;34m.[0m[0mastype[0m[0;34m([0m[0mdtype[0m[0;34m,[0m [0mcopy[0m[0;34m=[0m[0mcopy[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
 
 [0;31mValueError[0m: could not convert string to float: '30-39'
-ValueError: could not convert string to float: '30-39'
 
