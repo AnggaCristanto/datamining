@@ -8,7 +8,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tugas Data Mining NaiveBayes &#8212; Angga Cristanto</title>
+    <title>&lt;no title&gt; &#8212; Angga Cristanto</title>
   
   
   
@@ -63,7 +63,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'naivebayes';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="UTS KNN" href="notebooks4.html" />
+    <link rel="prev" title="Naive Bayes Classifier" href="notebooks4.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -154,12 +154,11 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <ul class="current nav bd-sidenav">
+        <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="markdown.html">Tugas 1 Mengambil Data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="notebooks.html">Decission Tree</a></li>
-<li class="toctree-l1"><a class="reference internal" href="K-NN.html">Implementasi K-NN(Tugas 3)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="notebooks4.html">UTS KNN</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Tugas Data Mining NaiveBayes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="K-NN.html">Implementasi K-NN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks4.html">Naive Bayes Classifier</a></li>
 </ul>
 
     </div>
@@ -361,7 +360,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -372,11 +373,19 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Tugas Data Mining NaiveBayes</h1>
+    <h1><no title></h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="simple visible nav section-nav flex-column">
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -386,8 +395,7 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="tex2jax_ignore mathjax_ignore section" id="tugas-data-mining-naivebayes">
-<h1>Tugas Data Mining NaiveBayes<a class="headerlink" href="#tugas-data-mining-naivebayes" title="Permalink to this heading">#</a></h1>
+  <p>#NaiveBayes GaussianNB</p>
 <p><strong>Naive Bayes</strong> adalah salah satu algoritma klasifikasi probabilistik yang sangat populer dalam data mining dan machine learning. Algoritma ini didasarkan pada teorema Bayes yang menyatakan bahwa probabilitas suatu hipotesis dapat dihitung berdasarkan probabilitas data yang diamati dan probabilitas a priori yang diketahui.</p>
 <p>Naive Bayes disebut “naive” karena asumsi dasar yang digunakan oleh algoritma ini sangat sederhana dan tidak realistis, yaitu asumsi bahwa setiap atribut yang digunakan untuk mengklasifikasikan objek adalah independen satu sama lain. Meskipun asumsi ini seringkali tidak sepenuhnya benar dalam dunia nyata, algoritma Naive Bayes tetap memberikan hasil klasifikasi yang sangat baik dalam banyak kasus dan cukup efisien dalam komputasinya.</p>
 <div class="cell docutils container">
@@ -419,7 +427,7 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-ff0d831a-cb75-4546-9dbe-4f747e04f694">
+  <div id="df-ee4e3292-ac3c-48fc-b712-df75f33c3f5c">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -490,7 +498,7 @@ document.write(`
   </tbody>
 </table>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-ff0d831a-cb75-4546-9dbe-4f747e04f694')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-ee4e3292-ac3c-48fc-b712-df75f33c3f5c')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
         
@@ -541,12 +549,12 @@ document.write(`
 
       <script>
         const buttonEl =
-          document.querySelector('#df-ff0d831a-cb75-4546-9dbe-4f747e04f694 button.colab-df-convert');
+          document.querySelector('#df-ee4e3292-ac3c-48fc-b712-df75f33c3f5c button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-ff0d831a-cb75-4546-9dbe-4f747e04f694');
+          const element = document.querySelector('#df-ee4e3292-ac3c-48fc-b712-df75f33c3f5c');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
@@ -604,12 +612,12 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([&#39;virginica&#39;, &#39;setosa&#39;, &#39;virginica&#39;, &#39;setosa&#39;, &#39;virginica&#39;,
-       &#39;versicolor&#39;, &#39;setosa&#39;, &#39;versicolor&#39;, &#39;virginica&#39;, &#39;versicolor&#39;,
-       &#39;setosa&#39;, &#39;versicolor&#39;, &#39;versicolor&#39;, &#39;setosa&#39;, &#39;setosa&#39;,
-       &#39;versicolor&#39;, &#39;virginica&#39;, &#39;virginica&#39;, &#39;setosa&#39;, &#39;versicolor&#39;,
-       &#39;setosa&#39;, &#39;versicolor&#39;, &#39;versicolor&#39;, &#39;setosa&#39;, &#39;setosa&#39;, &#39;setosa&#39;,
-       &#39;setosa&#39;, &#39;virginica&#39;, &#39;versicolor&#39;, &#39;versicolor&#39;], dtype=&#39;&lt;U10&#39;)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([&#39;setosa&#39;, &#39;virginica&#39;, &#39;virginica&#39;, &#39;versicolor&#39;, &#39;virginica&#39;,
+       &#39;versicolor&#39;, &#39;setosa&#39;, &#39;setosa&#39;, &#39;versicolor&#39;, &#39;setosa&#39;, &#39;setosa&#39;,
+       &#39;virginica&#39;, &#39;virginica&#39;, &#39;setosa&#39;, &#39;setosa&#39;, &#39;virginica&#39;,
+       &#39;setosa&#39;, &#39;versicolor&#39;, &#39;virginica&#39;, &#39;versicolor&#39;, &#39;versicolor&#39;,
+       &#39;virginica&#39;, &#39;versicolor&#39;, &#39;versicolor&#39;, &#39;setosa&#39;, &#39;setosa&#39;,
+       &#39;setosa&#39;, &#39;setosa&#39;, &#39;versicolor&#39;, &#39;versicolor&#39;], dtype=&#39;&lt;U10&#39;)
 </pre></div>
 </div>
 </div>
@@ -625,12 +633,12 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Accuracy :  0.9666666666666667
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Accuracy :  1.0
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[12,  0,  0],
        [ 0, 10,  0],
-       [ 0,  1,  7]])
+       [ 0,  0,  8]])
 </pre></div>
 </div>
 </div>
@@ -644,7 +652,7 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-ce2f93eb-4976-434f-bf53-0bd32617c068">
+  <div id="df-b73ccb73-865f-4227-b6ec-b31dd70b617b">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -671,13 +679,13 @@ document.write(`
   <tbody>
     <tr>
       <th>0</th>
-      <td>virginica</td>
-      <td>virginica</td>
+      <td>setosa</td>
+      <td>setosa</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>setosa</td>
-      <td>setosa</td>
+      <td>virginica</td>
+      <td>virginica</td>
     </tr>
     <tr>
       <th>2</th>
@@ -686,8 +694,8 @@ document.write(`
     </tr>
     <tr>
       <th>3</th>
-      <td>setosa</td>
-      <td>setosa</td>
+      <td>versicolor</td>
+      <td>versicolor</td>
     </tr>
     <tr>
       <th>4</th>
@@ -706,18 +714,18 @@ document.write(`
     </tr>
     <tr>
       <th>7</th>
-      <td>versicolor</td>
-      <td>versicolor</td>
+      <td>setosa</td>
+      <td>setosa</td>
     </tr>
     <tr>
       <th>8</th>
-      <td>virginica</td>
-      <td>virginica</td>
+      <td>versicolor</td>
+      <td>versicolor</td>
     </tr>
     <tr>
       <th>9</th>
-      <td>versicolor</td>
-      <td>versicolor</td>
+      <td>setosa</td>
+      <td>setosa</td>
     </tr>
     <tr>
       <th>10</th>
@@ -726,13 +734,13 @@ document.write(`
     </tr>
     <tr>
       <th>11</th>
-      <td>versicolor</td>
-      <td>versicolor</td>
+      <td>virginica</td>
+      <td>virginica</td>
     </tr>
     <tr>
       <th>12</th>
-      <td>versicolor</td>
-      <td>versicolor</td>
+      <td>virginica</td>
+      <td>virginica</td>
     </tr>
     <tr>
       <th>13</th>
@@ -746,23 +754,23 @@ document.write(`
     </tr>
     <tr>
       <th>15</th>
-      <td>versicolor</td>
-      <td>versicolor</td>
+      <td>virginica</td>
+      <td>virginica</td>
     </tr>
     <tr>
       <th>16</th>
-      <td>virginica</td>
-      <td>virginica</td>
+      <td>setosa</td>
+      <td>setosa</td>
     </tr>
     <tr>
       <th>17</th>
-      <td>virginica</td>
-      <td>virginica</td>
+      <td>versicolor</td>
+      <td>versicolor</td>
     </tr>
     <tr>
       <th>18</th>
-      <td>setosa</td>
-      <td>setosa</td>
+      <td>virginica</td>
+      <td>virginica</td>
     </tr>
     <tr>
       <th>19</th>
@@ -771,23 +779,23 @@ document.write(`
     </tr>
     <tr>
       <th>20</th>
-      <td>setosa</td>
-      <td>setosa</td>
+      <td>versicolor</td>
+      <td>versicolor</td>
     </tr>
     <tr>
       <th>21</th>
-      <td>versicolor</td>
-      <td>versicolor</td>
+      <td>virginica</td>
+      <td>virginica</td>
     </tr>
     <tr>
       <th>22</th>
-      <td>virginica</td>
+      <td>versicolor</td>
       <td>versicolor</td>
     </tr>
     <tr>
       <th>23</th>
-      <td>setosa</td>
-      <td>setosa</td>
+      <td>versicolor</td>
+      <td>versicolor</td>
     </tr>
     <tr>
       <th>24</th>
@@ -806,8 +814,8 @@ document.write(`
     </tr>
     <tr>
       <th>27</th>
-      <td>virginica</td>
-      <td>virginica</td>
+      <td>setosa</td>
+      <td>setosa</td>
     </tr>
     <tr>
       <th>28</th>
@@ -822,7 +830,7 @@ document.write(`
   </tbody>
 </table>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-ce2f93eb-4976-434f-bf53-0bd32617c068')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-b73ccb73-865f-4227-b6ec-b31dd70b617b')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
         
@@ -873,12 +881,12 @@ document.write(`
 
       <script>
         const buttonEl =
-          document.querySelector('#df-ce2f93eb-4976-434f-bf53-0bd32617c068 button.colab-df-convert');
+          document.querySelector('#df-b73ccb73-865f-4227-b6ec-b31dd70b617b button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-ce2f93eb-4976-434f-bf53-0bd32617c068');
+          const element = document.querySelector('#df-b73ccb73-865f-4227-b6ec-b31dd70b617b');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
@@ -898,7 +906,6 @@ document.write(`
     </div>
   </div>
   </div></div>
-</div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -938,7 +945,7 @@ document.write(`
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">UTS KNN</p>
+        <p class="prev-next-title">Naive Bayes Classifier</p>
       </div>
     </a>
 </div></div>
@@ -950,6 +957,20 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="simple visible nav section-nav flex-column">
+</ul>
+
+  </nav></div>
+
+</div></div>
               
             
           </div>
