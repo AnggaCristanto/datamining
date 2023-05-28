@@ -15,16 +15,16 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-df = pd.read_csv('iris.csv')
-df
+uji = pd.read_csv('ujiiris2.csv')
+uji
 ------------------
 
 
 [0;31m[0m
 [0;31mFileNotFoundError[0mTraceback (most recent call last)
-[0;32m<ipython-input-2-47566e8f2ca6>[0m in [0;36m<cell line: 1>[0;34m()[0m
-[0;32m----> 1[0;31m [0mdf[0m [0;34m=[0m [0mpd[0m[0;34m.[0m[0mread_csv[0m[0;34m([0m[0;34m'iris.csv'[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[0m[1;32m      2[0m [0mdf[0m[0;34m[0m[0;34m[0m[0m
+[0;32m<ipython-input-12-68314628dfdd>[0m in [0;36m<cell line: 1>[0;34m()[0m
+[0;32m----> 1[0;31m [0muji[0m [0;34m=[0m [0mpd[0m[0;34m.[0m[0mread_csv[0m[0;34m([0m[0;34m'ujiiris2.csv'[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m      2[0m [0muji[0m[0;34m[0m[0;34m[0m[0m
 
 [0;32m/usr/local/lib/python3.10/dist-packages/pandas/util/_decorators.py[0m in [0;36mwrapper[0;34m(*args, **kwargs)[0m
 [1;32m    209[0m                 [0;32melse[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
@@ -75,5 +75,5 @@ df
 [0m[1;32m    857[0m                 [0mhandle[0m[0;34m,[0m[0;34m[0m[0;34m[0m[0m
 [1;32m    858[0m                 [0mioargs[0m[0;34m.[0m[0mmode[0m[0;34m,[0m[0;34m[0m[0;34m[0m[0m
 
-[0;31mFileNotFoundError[0m: [Errno 2] No such file or directory: 'iris.csv'
+[0;31mFileNotFoundError[0m: [Errno 2] No such file or directory: 'ujiiris2.csv'
 
