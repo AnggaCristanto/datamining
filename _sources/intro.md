@@ -1,7 +1,8 @@
-# Penambangan Data B
+# 21-039 Angga Cristanto
 
 ### Angga Cristanto 210411100039
 
+Email = https://anggacristanto.github.io/datamining/intro.html
 
 Data mining atau penambangan data adalah proses ekstraksi atau pengambilan informasi yang bermanfaat atau pengetahuan yang tersembunyi dari dalam data yang besar dan kompleks. Proses ini melibatkan menggunakan teknik matematika, statistik, dan algoritma untuk mengidentifikasi pola atau hubungan yang tersembunyi di dalam data, sehingga dapat digunakan untuk membuat keputusan yang lebih baik dan lebih efektif.
 
